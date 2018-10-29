@@ -93,39 +93,14 @@
 
     <target name="copy-jnilibs">
 	<mkdir dir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir}"/>
-	<mkdir dir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.windows}"/>
 	<mkdir dir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.linux}"/>
-	<mkdir dir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.solaris-sparc}"/>
-	<mkdir dir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.solaris-x86}"/>
-	<mkdir dir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.macosx}"/>
 
-        <copy file="${native.dirname}/${native.jnilib.dir.windows}/${native.dist.dir}/${native.jnilib.file.windows.i386}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.windows}"/>
-        <copy file="${native.dirname}/${native.jnilib.dir.windows}/${native.dist.dir}/${native.jnilib.file.windows.amd64}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.windows}"/>
-        <copy file="${native.dirname}/${native.jnilib.dir.windows}/${native.dist.dir}/${native.jnilib.file.windows.ia64}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.windows}"/>
-        <copy file="${native.dirname}/${native.jnilib.dir.linux}/${native.dist.dir}/${native.jnilib.file.linux.i386}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.linux}"/>
 	<copy file="${native.dirname}/${native.jnilib.dir.linux}/${native.dist.dir}/${native.jnilib.file.linux.amd64}" 
               todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.linux}"/>
-        <copy file="${native.dirname}/${native.jnilib.dir.solaris-x86}/${native.dist.dir}/${native.jnilib.file.solaris-x86}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.solaris-x86}"/>
-	<copy file="${native.dirname}/${native.jnilib.dir.solaris-x86}/${native.dist.dir}/${native.jnilib.file.solaris-amd64}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.solaris-x86}"/>
-        <copy file="${native.dirname}/${native.jnilib.dir.solaris-sparc}/${native.dist.dir}/${native.jnilib.file.solaris-sparc}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.solaris-sparc}"/>
-	<copy file="${native.dirname}/${native.jnilib.dir.solaris-sparc}/${native.dist.dir}/${native.jnilib.file.solaris-sparcv9}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.solaris-sparc}"/>
-        <copy file="${native.dirname}/${native.jnilib.dir.macosx}/${native.dist.dir}/${native.jnilib.file.macosx}" 
-              todir="${build.classes.dir}/${native.dirname}/${native.jnilib.dir.macosx}"/>
     </target>
 
-    <target name="copy-launchers">
-	
-	<antcall target="copy-windows-launcher"/>	
+    <target name="copy-launchers">	
         <antcall target="copy-unix-launcher"/>
-	
     </target>
 
     <target name="copy-cleaners">
